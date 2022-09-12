@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   # ここに追加
   accepts_nested_attributes_for :photos
 
-  def liked_by(current_user)
+  def liked_by(user)
     Like.find_by(user_id: user.id, post_id: id)
   end
 end
